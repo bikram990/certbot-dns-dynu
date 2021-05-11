@@ -3,7 +3,7 @@ from os import path
 from setuptools import setup
 from setuptools import find_packages
 
-version = "0.0.1"
+version = "0.0.2"
 
 with open('README.md') as f:
     long_description = f.read()
@@ -29,7 +29,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/bikram990/certbot-dns-dynu',
-    download_url='https://github.com/bikram990/certbot-dns-dynu/archive/refs/tags/0.0.1.tar.gz',
+    download_url='https://github.com/bikram990/certbot-dns-dynu/archive/refs/tags/0.0.2.tar.gz',
     author="Bikramjeet Singh",
     license='Apache License 2.0',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
