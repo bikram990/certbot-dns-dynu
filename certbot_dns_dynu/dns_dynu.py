@@ -91,3 +91,8 @@ class _DynuLexiconClient(dns_common_lexicon.LexiconClient):
             return  # Expected errors when zone name guess is wrong
         return super(_DynuLexiconClient, self)._handle_http_error(e, domain_name)
 
+    def _handle_general_error(self, e, domain_name):
+        # Error from https://github.com/AnalogJ/lexicon/blob/master/lexicon/providers/dynu.py#L38
+        if str(e) == "No matching domain found": 
+            return # Expected error when zone name guess is wrong.
+        return super(_DynuLexiconClient, self)._handle_http_error(e, domain_name)
