@@ -15,7 +15,6 @@ install_requires = [
     'dnspython',
     'mock',
     'setuptools',
-    'zope.interface',
     'requests'
 ]
 
