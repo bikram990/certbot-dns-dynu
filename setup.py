@@ -3,15 +3,15 @@ from os import path
 from setuptools import setup
 from setuptools import find_packages
 
-version = "0.0.3"
+version = "0.0.4"
 
 with open('README.md') as f:
     long_description = f.read()
 
 install_requires = [
-    'acme>=0.31.0',
-    'certbot>=0.31.0',
-    'dns-lexicon>=3.2.4,<=3.5.6',
+    'acme>=2.0.0',
+    'certbot>=2.0.0',
+    'dns-lexicon==3.11.7',
     'dnspython',
     'mock',
     'setuptools',
@@ -28,7 +28,7 @@ setup(
     long_description=long_description,
     long_description_content_type='text/markdown',
     url='https://github.com/bikram990/certbot-dns-dynu',
-    download_url='https://github.com/bikram990/certbot-dns-dynu/archive/refs/tags/0.0.3.tar.gz',
+    download_url='https://github.com/bikram990/certbot-dns-dynu/archive/refs/tags/' + version +'.tar.gz',
     author="Bikramjeet Singh",
     license='Apache License 2.0',
     python_requires='>=2.7, !=3.0.*, !=3.1.*, !=3.2.*, !=3.3.*',
