@@ -11,6 +11,8 @@ name: Upload Python Package
 on:
   release:
     types: [published]
+  pull_request:
+    types: [opened, edited, reopened]
 
 permissions:
   contents: read
@@ -53,7 +55,7 @@ jobs:
 
           python -m build --wheel --config-setting=--global-option=egg_info \
           --config-setting=--global-option=-b"dev${timestamp}"
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+        if: github.event_name == 'pull_request'
 
       - name: Build release distributions
         run: |
@@ -63,7 +65,7 @@ jobs:
           python -m pip install -r requirements.txt
           python -m build --wheel --config-setting=--global-option=egg_info \
           --config-setting=--global-option=-b"post${timestamp}"
-        if: github.event_name == 'push' && startsWith(github.ref, 'refs/tags')
+        if: github.event_name == 'release'
 
       - name: Upload distributions
         uses: actions/upload-artifact@v4
