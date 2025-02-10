@@ -1,0 +1,38 @@
+{
+    "[python]": {
+        "editor.defaultFormatter": "ms-python.black-formatter",
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": "explicit"
+        },
+    },
+    "black-formatter.args": [
+        "--line-length",
+        "100"
+    ],
+
+    "autoDocstring.docstringFormat": "pep257",
+    "autoDocstring.includeName": true,
+    "autoDocstring.quoteStyle": "\"\"\"",
+    "remote.localPortHost": "allInterfaces",
+    // Add a newline to end of file if one doesn't exist
+    "files.insertFinalNewline": true,
+    // Remove trailing whitespace from lines
+    "files.trimTrailingWhitespace": true,
+    // Show whitespace characters at the beginning and end of lines
+    "editor.renderWhitespace": "boundary",
+    // Set the right hand ruler to 100 to match our line length linting rule
+    "editor.rulers": [
+        100
+    ],
+    "editor.detectIndentation": true,
+    "[shellscript]": {
+        "editor.parameterHints.enabled": false,
+        "editor.suggest.snippetsPreventQuickSuggestions": false,
+        "editor.quickSuggestions": {
+            "other": false,
+            "comments": false,
+            "strings": false
+        },
+    }
+}
