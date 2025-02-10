@@ -9,7 +9,7 @@ from certbot.plugins import dns_test_common
 from certbot.plugins import dns_test_common_lexicon
 from certbot.tests import util as test_util
 
-from certbot_dns_dynu.dns_dynu import Authenticator
+from src.certbot_dns_dynu.dns_dynu import Authenticator
 
 AUTH_TOKEN = "00000000-0000-0000-0000-000000000000"
 logger = logging.getLogger(__name__)

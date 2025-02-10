@@ -1,2 +1,4 @@
 build
 twine
+setuptools
+pylint==3.0.3
