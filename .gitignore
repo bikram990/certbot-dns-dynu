@@ -127,3 +127,11 @@ dmypy.json
 
 # Pyre type checker
 .pyre/
+
+._.DS_Store
+.DS_Store
+test/config
+test/logs
+test/work
+dynu-credentials.ini
+.pypirc

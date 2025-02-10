@@ -1,0 +1,5 @@
+acme>=2.0.0
+certbot>=2.0.0
+dns-lexicon==3.20.1
+dnspython
+requests

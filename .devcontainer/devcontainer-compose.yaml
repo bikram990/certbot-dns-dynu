@@ -1,0 +1,15 @@
+# https://code.visualstudio.com/docs/devcontainers/create-dev-container
+version: '3.8'
+services:
+  devcontainer:
+    restart: unless-stopped
+    image: mcr.microsoft.com/devcontainers/python:0-3.11
+    volumes:
+      - ..:/opt/app:cached
+    command: sleep infinity
+    networks:
+      - certbot
+
+networks:
+  certbot:
+    name: certbot

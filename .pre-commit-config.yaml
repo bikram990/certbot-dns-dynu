@@ -1,0 +1,61 @@
+default_language_version:
+  python: python3
+repos:
+  - repo: https://github.com/psf/black-pre-commit-mirror
+    rev: "24.10.0"
+    hooks:
+      - id: black
+        language_version: python3.11
+        args:
+          - --line-length
+          - "100"
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v5.0.0
+    hooks:
+      - id: check-yaml
+      - id: check-json
+      - id: end-of-file-fixer
+      - id: trailing-whitespace
+      - id: pretty-format-json
+        args:
+          - --autofix
+      - id: no-commit-to-branch
+        args:
+         - --branch
+         - main
+         - --branch
+         - develop
+      - id: requirements-txt-fixer
+  - repo: local
+    hooks:
+      - id: pylint
+        name: pylint
+        language: system
+        types:
+          - python
+        entry: python
+        args:
+          - -m
+          - pylint
+          - "-rn" # Only display messages
+          - "-sn" # Don't display the score
+          - "--rcfile=.pylintrc" # Link to your config file
+      - id: pytest-unit
+        name: pytest-unit
+        language: system
+        types_or:
+          - python
+        pass_filenames: false
+        entry: python
+        args:
+          - -m
+          - pytest
+          - -v
+          - -s
+          - --full-trace
+          - src
+exclude: |
+  (?x)(
+    ^.devcontainer/|
+    ^.vscode/
+  )
